@@ -4,53 +4,56 @@ public class main {
     public static void main(String[] args) {
 
         int number = 6;
+        int number2 = 0;
         int input1 = 4;
         int input2 = 20;
         String name = "Ollie";
+        String kittyName = "Prinses";
 
         hello();
 
-        System.out.println(positiveOrNegative(number));
+        positiveOrNegative(number);
 
-        System.out.println(positiveZeroOrNegative(number));
+        positiveZeroOrNegative(number2);
 
         bartender(name);
 
-        System.out.println(sum(input1, input2));
+        sum(input1, input2);
 
+        kitty(kittyName);
     }
 
-    public static void hello(){
+    public static void hello() {
         System.out.println("Hello world");
     }
 
-    public static String positiveOrNegative(int number){
-        if (number > 0 ){
-            return "This number is positive!";
-        } else {
-            return "This number is negative!";
-        }
-    }
-
-    public static String positiveZeroOrNegative(int number) {
+    public static void positiveOrNegative(int number) {
         if (number > 0) {
-            return "This number is positive!";
-        } else if (number < 0){
-            return "This number is negative!";
+            System.out.println("This number is positive!");
         } else {
-            return "This number is zero";
+            System.out.println("This number is negative!");
         }
     }
 
-    public static void bartender(String name){
+    public static void positiveZeroOrNegative(int number) {
+        if (number > 0) {
+            System.out.println("This number is positive!");
+        } else if (number < 0) {
+            System.out.println("This number is negative!");
+        } else {
+            System.out.println("This number is zero");
+        }
+    }
+
+    public static void bartender(String name) {
         switch (name) {
-            case "Willy" :
+            case "Willy":
                 System.out.println("Willy drinkt graag sinasappelsap");
                 break;
-            case "Geest" :
+            case "Geest":
                 System.out.println("Geest drinkt graag een glaasje afwasmiddel");
                 break;
-            case "Ollie" :
+            case "Ollie":
                 System.out.println("Ollie drinkt graag een schaaltje melk");
                 break;
             default:
@@ -58,12 +61,29 @@ public class main {
         }
     }
 
-    public static int sum(int input1, int input2) {
-        return input1 + input2;
+    public static void sum(int input1, int input2) {
+        int answer = input1 + input2;
+        System.out.println("The sum of this numbers is " + answer);
     }
 
-
-
+    public static void kitty(String catName) {
+        switch (catName) {
+            case "Louis":
+                System.out.println("Louis is donkerrood, houdt van thee en is onvoorspelbaar");
+                break;
+            case "Loetje":
+                System.out.println("Loetje is rood met wit gevlekt, heel nieuwsgierig en nog jong");
+                break;
+            case "Luzensky":
+                System.out.println("Luzensky is licht-rood en wit gevlekt, dol op theezakjes, nieuwsgierig en makkelijk");
+                break;
+            case "Prinses":
+                System.out.println("Prinses is rood met wit gevlekt en heeft een wollige vacht. Ze is lief en elegant");
+                break;
+            default:
+                System.out.println("Geen kat gekozen");
+        }
+    }
 
 
 }
